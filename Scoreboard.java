@@ -20,13 +20,19 @@ public class Scoreboard {
     public void recordPlay(int score) {
         if (teamOne.equals(activeTeam)) {
             teamOneScore += score;
-            activeTeam = teamTwo;
-        }
-        else{
-            teamTwoScore += score;
-            activeTeam = teamOne;
-        }
+            if (score == 0) {
+                activeTeam = teamTwo;}
 
+            }
+            else {//if (teamTwo.equals(activeTeam)) {
+                teamTwoScore += score;
+                if (score == 0) {
+                    activeTeam = teamOne;
+                }
+
+            }
+
+        }
     }
-}
+
 
